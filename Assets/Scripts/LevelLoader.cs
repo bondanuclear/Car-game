@@ -13,8 +13,13 @@ public class LevelLoader : MonoBehaviour
     }
     private void Start() {
         //Debug.Log("Check value :" + persistentData.CarIndex);
-        car = RCC.SpawnRCC(persistentData.GetCar, new Vector3(0, 0.8f, 0), Quaternion.identity, true, true, true);
+        car = RCC.SpawnRCC(persistentData.GetCar, new Vector3(0, 0.5f, 0), Quaternion.identity, true, true, true);
         rcc_Camera.playerCar = car;
         
+    }
+
+    public void LoadGarageLevel(int index)
+    {
+        SceneManager.LoadScene(index);
     }
 }
