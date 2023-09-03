@@ -11,12 +11,7 @@ public class CameraHandler : MonoBehaviour
     [SerializeField] Vector2 initialTouch;
     [SerializeField] Vector2 newPosition;
     [SerializeField] Vector2 dir;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
+ 
     // Update is called once per frame
     void Update()
     {
@@ -28,15 +23,15 @@ public class CameraHandler : MonoBehaviour
             if(touch.phase == UnityEngine.TouchPhase.Began)
             {
                 initialTouch = touch.position;
-                Debug.Log("initial touch" + initialTouch);
+                //Debug.Log("initial touch" + initialTouch);
             }
             else if (touch.phase == UnityEngine.TouchPhase.Moved)
             {
-                Debug.Log("Moved ");
+                //Debug.Log("Moved ");
                 newPosition = touch.position;
                 dir = (newPosition - initialTouch).normalized;
                 rotatingDirection = dir.x > 0.2 ? 1 : dir.x < -0.2 ? -1 : 0;
-                Debug.Log("Dir" + dir);
+                //Debug.Log("Dir" + dir);
                 //Debug.Log($"Initial touch {initialTouch}, new touch {newPosition}");
             }
             else if(touch.phase == UnityEngine.TouchPhase.Ended)

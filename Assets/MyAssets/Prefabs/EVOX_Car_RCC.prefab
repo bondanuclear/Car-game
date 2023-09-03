@@ -3037,7 +3037,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6845441553662219281}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Lights
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3073,7 +3073,7 @@ GameObject:
   - component: {fileID: 6845441553737566897}
   - component: {fileID: 6845441553737566896}
   - component: {fileID: 6845441553737566903}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: RCCExhaust
   m_TagString: Player
   m_Icon: {fileID: 4162164826716764455, guid: 0000000000000000d000000000000000, type: 0}
@@ -7868,7 +7868,7 @@ GameObject:
   - component: {fileID: 6845441553958778453}
   - component: {fileID: 6845441553958778452}
   - component: {fileID: 6845441553958778459}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: HeadLight
   m_TagString: Untagged
   m_Icon: {fileID: 864586104465068316, guid: 0000000000000000d000000000000000, type: 0}
@@ -8076,7 +8076,7 @@ GameObject:
   - component: {fileID: 6845441554203643911}
   - component: {fileID: 6845441554203643910}
   - component: {fileID: 6845441554203643909}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BrakeLight
   m_TagString: Untagged
   m_Icon: {fileID: -3545028842045912814, guid: 0000000000000000d000000000000000, type: 0}
@@ -8209,7 +8209,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6845441554402238238}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Lights
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8244,7 +8244,7 @@ GameObject:
   - component: {fileID: 6845441554430702421}
   - component: {fileID: 6845441554430702420}
   - component: {fileID: 6845441554430702427}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ReverseLight
   m_TagString: Untagged
   m_Icon: {fileID: -3114416830163030229, guid: 0000000000000000d000000000000000, type: 0}
@@ -8417,7 +8417,7 @@ GameObject:
   - component: {fileID: 6845441554574294767}
   - component: {fileID: 6845441554574294766}
   - component: {fileID: 6845441554574294765}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: RCCExhaustFlame
   m_TagString: Player
   m_Icon: {fileID: -7310811918437815874, guid: 0000000000000000d000000000000000, type: 0}
@@ -13211,7 +13211,7 @@ GameObject:
   - component: {fileID: 6845441554722456753}
   - component: {fileID: 6845441554722456752}
   - component: {fileID: 6845441554722456759}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ReverseLight_D
   m_TagString: Untagged
   m_Icon: {fileID: -3114416830163030229, guid: 0000000000000000d000000000000000, type: 0}
@@ -13446,7 +13446,7 @@ GameObject:
   - component: {fileID: 6845441554774063495}
   - component: {fileID: 6845441554774063494}
   - component: {fileID: 6845441554774063493}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: RCCExhaustFlame
   m_TagString: Player
   m_Icon: {fileID: -7310811918437815874, guid: 0000000000000000d000000000000000, type: 0}
@@ -18237,7 +18237,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6845441554834108617}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Lights
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18304,7 +18304,7 @@ GameObject:
   - component: {fileID: 6845441554995711634}
   - component: {fileID: 6845441554995711633}
   - component: {fileID: 6845441554995711632}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BrakeLight_D
   m_TagString: Untagged
   m_Icon: {fileID: -3545028842045912814, guid: 0000000000000000d000000000000000, type: 0}
@@ -18440,7 +18440,7 @@ GameObject:
   - component: {fileID: 6845441555049381396}
   - component: {fileID: 6845441555049381403}
   - component: {fileID: 6845441555049381402}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: HeadLight
   m_TagString: Untagged
   m_Icon: {fileID: 864586104465068316, guid: 0000000000000000d000000000000000, type: 0}
@@ -18674,7 +18674,7 @@ GameObject:
   - component: {fileID: 6845441555281252238}
   - component: {fileID: 6845441555281252237}
   - component: {fileID: 6845441555281252236}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: IndicatorLight
   m_TagString: Untagged
   m_Icon: {fileID: -4453645107408684167, guid: 0000000000000000d000000000000000, type: 0}
@@ -19281,7 +19281,7 @@ GameObject:
   - component: {fileID: 6845441555386014807}
   - component: {fileID: 6845441555386014806}
   - component: {fileID: 6845441555386014805}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: IndicatorLight_D
   m_TagString: Untagged
   m_Icon: {fileID: -4453645107408684167, guid: 0000000000000000d000000000000000, type: 0}
@@ -19414,7 +19414,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6845441555484135572}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Exhausts
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19446,7 +19446,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6845441555554597457}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Lights
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19481,7 +19481,7 @@ GameObject:
   - component: {fileID: 6845441555563519912}
   - component: {fileID: 6845441555563519919}
   - component: {fileID: 6845441555563519918}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: HoodCamera
   m_TagString: Player
   m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
@@ -19639,7 +19639,7 @@ GameObject:
   - component: {fileID: 6845441555584735791}
   - component: {fileID: 6845441555584735790}
   - component: {fileID: 6845441555584735789}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: RCCExhaust
   m_TagString: Player
   m_Icon: {fileID: 4162164826716764455, guid: 0000000000000000d000000000000000, type: 0}
@@ -24333,7 +24333,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6845441555613679747}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Lights
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24366,7 +24366,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6845441555633158524}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Exhausts
   m_TagString: Untagged
   m_Icon: {fileID: 0}

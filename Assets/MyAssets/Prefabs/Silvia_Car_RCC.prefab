@@ -613,7 +613,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 827595292286988981}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Rear_Indicators
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -715,7 +715,7 @@ GameObject:
   - component: {fileID: 827595292544839619}
   - component: {fileID: 827595292544839628}
   - component: {fileID: 827595292544839629}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BrakeLight
   m_TagString: Untagged
   m_Icon: {fileID: -3545028842045912814, guid: 0000000000000000d000000000000000, type: 0}
@@ -985,7 +985,7 @@ GameObject:
   - component: {fileID: 827595292990705986}
   - component: {fileID: 827595292990705987}
   - component: {fileID: 827595292990705996}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: IndicatorLight
   m_TagString: Untagged
   m_Icon: {fileID: -4453645107408684167, guid: 0000000000000000d000000000000000, type: 0}
@@ -1118,7 +1118,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 827595293004613333}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Reverse_lights
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1154,7 +1154,7 @@ GameObject:
   - component: {fileID: 827595293142487773}
   - component: {fileID: 827595293142487774}
   - component: {fileID: 827595293142487775}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ReverseLight
   m_TagString: Untagged
   m_Icon: {fileID: -3114416830163030229, guid: 0000000000000000d000000000000000, type: 0}
@@ -1362,7 +1362,7 @@ GameObject:
   - component: {fileID: 827595293196691781}
   - component: {fileID: 827595293196691782}
   - component: {fileID: 827595293196691783}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: IndicatorLight_D
   m_TagString: Untagged
   m_Icon: {fileID: -4453645107408684167, guid: 0000000000000000d000000000000000, type: 0}
@@ -1498,7 +1498,7 @@ GameObject:
   - component: {fileID: 827595293324476164}
   - component: {fileID: 827595293324476165}
   - component: {fileID: 827595293324476166}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: HeadLight
   m_TagString: Untagged
   m_Icon: {fileID: 864586104465068316, guid: 0000000000000000d000000000000000, type: 0}
@@ -1670,7 +1670,7 @@ GameObject:
   - component: {fileID: 827595293402939107}
   - component: {fileID: 827595293402939116}
   - component: {fileID: 827595293402939117}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: HoodCamera
   m_TagString: Player
   m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
@@ -2021,7 +2021,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 827595293630963626}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Front_Indicators
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2057,7 +2057,7 @@ GameObject:
   - component: {fileID: 827595293650365824}
   - component: {fileID: 827595293650365825}
   - component: {fileID: 827595293650365826}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BrakeLight_D
   m_TagString: Untagged
   m_Icon: {fileID: -3545028842045912814, guid: 0000000000000000d000000000000000, type: 0}
@@ -2225,7 +2225,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 827595293745945916}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Brake_lights
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2261,7 +2261,7 @@ GameObject:
   - component: {fileID: 827595293747759939}
   - component: {fileID: 827595293747759948}
   - component: {fileID: 827595293747759949}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ReverseLight_D
   m_TagString: Untagged
   m_Icon: {fileID: -3114416830163030229, guid: 0000000000000000d000000000000000, type: 0}
@@ -2397,7 +2397,7 @@ GameObject:
   - component: {fileID: 827595293776800493}
   - component: {fileID: 827595293776800494}
   - component: {fileID: 827595293776800495}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: HeadLight_D
   m_TagString: Untagged
   m_Icon: {fileID: 864586104465068316, guid: 0000000000000000d000000000000000, type: 0}
@@ -2530,7 +2530,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 827595293886961373}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: HeadLights
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2566,7 +2566,7 @@ GameObject:
   - component: {fileID: 827595293913689311}
   - component: {fileID: 827595293913689304}
   - component: {fileID: 827595293913689305}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: IndicatorLight_D
   m_TagString: Untagged
   m_Icon: {fileID: -4453645107408684167, guid: 0000000000000000d000000000000000, type: 0}
@@ -2702,7 +2702,7 @@ GameObject:
   - component: {fileID: 827595293915928887}
   - component: {fileID: 827595293915928880}
   - component: {fileID: 827595293915928881}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: IndicatorLight
   m_TagString: Untagged
   m_Icon: {fileID: -4453645107408684167, guid: 0000000000000000d000000000000000, type: 0}
