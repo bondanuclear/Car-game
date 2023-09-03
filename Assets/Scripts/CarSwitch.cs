@@ -17,5 +17,8 @@ public class CarSwitch : MonoBehaviour
         cars[previousIndex].SetActive(false);
         cars[currentIndex].SetActive(true);
     }
-    
+    public void TestButton()
+    {
+        Debug.Log("It's working !");
+    }
 }
