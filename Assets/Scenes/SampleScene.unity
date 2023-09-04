@@ -1630,6 +1630,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Silvia_Car_RCC
       objectReference: {fileID: 0}
+    - target: {fileID: 827595291966824735, guid: a0ec7ba66d5d366488e0fc4a7896c00c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a0ec7ba66d5d366488e0fc4a7896c00c, type: 3}
 --- !u!1001 &6845441554827515836

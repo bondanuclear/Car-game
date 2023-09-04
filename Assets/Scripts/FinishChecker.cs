@@ -9,7 +9,7 @@ public class FinishChecker : MonoBehaviour
         //Debug.Log($"Triggered by {other.gameObject.tag}");
         if(other.CompareTag("CarBody"))
         {
-            Debug.Log("Touched a player");
+            //Debug.Log("Touched a player");
             finishPanel.SetActive(true);
         }
     }

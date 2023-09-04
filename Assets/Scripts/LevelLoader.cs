@@ -8,7 +8,7 @@ public class LevelLoader : MonoBehaviour
     RCC_CarControllerV3 car;
     RCC_Camera rcc_Camera;
     private void Awake() {
-        persistentData ??= FindObjectOfType<PersistentData>();
+        persistentData = FindObjectOfType<PersistentData>();
         rcc_Camera = FindObjectOfType<RCC_Camera>();
     }
     private void Start() {
