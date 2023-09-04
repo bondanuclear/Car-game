@@ -16,11 +16,14 @@ public class CameraHandler : MonoBehaviour
     // different camera behaviour
     [Header("Behaviour: arbitrary rotating")]
     [SerializeField] float distance = 20;
-    float rotationY, rotationX;
+    float rotationY = -69, rotationX = 14;
     [SerializeField] float sensitivity = 0.2f;
     [SerializeField] float lowerThreshold = 1f;
     [SerializeField] float upperThreshold = 89;
-
+    Vector3 currVelocity = Vector3.zero;
+    Vector3 currentRotation;
+    [SerializeField] float smoothTime = 3;
+    [SerializeField] float maxSpeed = 100f;
     private void Start() {
         
     }
@@ -43,7 +46,13 @@ public class CameraHandler : MonoBehaviour
                 //Debug.Log(touchDeltaPosition);
                 rotationY += touchDeltaPosition.x * sensitivity * Time.deltaTime;
                 rotationX += touchDeltaPosition.y * sensitivity * Time.deltaTime;
-                transform.localEulerAngles = new Vector3(rotationX, rotationY, 0);
+                rotationX = Mathf.Clamp(rotationX, lowerThreshold, upperThreshold);
+                Vector3 targetRotation = new Vector3(rotationX, rotationY, 0);
+                // currentRotation = Vector3.SmoothDamp(currentRotation, targetRotation,
+                //   ref currVelocity, smoothTime);
+                transform.localEulerAngles = Vector3.Lerp(transform.localEulerAngles,
+                targetRotation, smoothTime);
+
                 //RotateAroundY(touch);
             }
             else if(touch.phase == UnityEngine.TouchPhase.Ended)
@@ -68,7 +77,7 @@ public class CameraHandler : MonoBehaviour
 
     private void LateUpdate() {
         transform.position = carLocation.transform.position - transform.forward * distance;
-        rotationX = Mathf.Clamp(rotationX, lowerThreshold, upperThreshold);
+        
         
         // rotate aroundY
         //transform.LookAt(carLocation.transform);
