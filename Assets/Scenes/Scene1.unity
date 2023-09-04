@@ -2161,6 +2161,10 @@ MonoBehaviour:
   initialTouch: {x: 0, y: 0}
   newPosition: {x: 0, y: 0}
   dir: {x: 0, y: 0}
+  distance: 10
+  sensitivity: 200
+  lowerThreshold: 5
+  upperThreshold: 89
 --- !u!1001 &1191283331
 PrefabInstance:
   m_ObjectHideFlags: 0
