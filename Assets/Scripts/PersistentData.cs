@@ -13,10 +13,12 @@ public class PersistentData : MonoBehaviour
     private void Awake() {
         if(instance == null)
         {
+            Debug.Log("Creation!");
             instance = this;
         }
         else if(instance != null)
         {
+            Debug.Log("Destruction..");
             Destroy(gameObject);
         }
         DontDestroyOnLoad(gameObject);

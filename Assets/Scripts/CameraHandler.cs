@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+
+
 //using System.Numerics;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -24,8 +26,9 @@ public class CameraHandler : MonoBehaviour
     Vector3 currentRotation;
     [SerializeField] float smoothTime = 3;
     [SerializeField] float maxSpeed = 100f;
+    
     private void Start() {
-        
+       
     }
     // Update is called once per frame
     void Update()
@@ -33,36 +36,41 @@ public class CameraHandler : MonoBehaviour
         if(Input.touchCount > 0)
         {
             Touch touch = Input.GetTouch(0);
-           
-            //Debug.Log(touch.position);
-            if(touch.phase == UnityEngine.TouchPhase.Began)
+            
+            Debug.Log("Get touch" + Input.GetTouch(0).deltaPosition);
+            if (touch.phase == UnityEngine.TouchPhase.Began)
             {
                 initialTouch = touch.position;
                 //Debug.Log("initial touch" + initialTouch);
             }
             else if (touch.phase == UnityEngine.TouchPhase.Moved)
             {
-                Vector2 touchDeltaPosition = Input.GetTouch(0).deltaPosition.normalized;
-                //Debug.Log(touchDeltaPosition);
-                rotationY += touchDeltaPosition.x * sensitivity * Time.deltaTime;
-                rotationX += touchDeltaPosition.y * sensitivity * Time.deltaTime;
+                
+                Vector2 touchDeltaPosition = touch.deltaPosition;
+                //Vector2 deltaScaled = new Vector2(touchDeltaPosition.x / Screen.width, touchDeltaPosition.y / Screen.height);
+                //Debug.Log("delta: " + deltaScaled);    
+                rotationY += touchDeltaPosition.x  * sensitivity * Time.deltaTime;
+                rotationX -= touchDeltaPosition.y  * sensitivity * Time.deltaTime;
                 rotationX = Mathf.Clamp(rotationX, lowerThreshold, upperThreshold);
+                //Debug.Log(rotationX + " rotation X ");
                 Vector3 targetRotation = new Vector3(rotationX, rotationY, 0);
                 // currentRotation = Vector3.SmoothDamp(currentRotation, targetRotation,
                 //   ref currVelocity, smoothTime);
                 transform.localEulerAngles = Vector3.Lerp(transform.localEulerAngles,
                 targetRotation, smoothTime);
-
+                //transform.localEulerAngles = targetRotation; 
                 //RotateAroundY(touch);
             }
             else if(touch.phase == UnityEngine.TouchPhase.Ended)
             {
+                
                 //rotatingDirection = 0;
-            }
-
+            } 
+            
+            
         }
-       
         
+
     }
 
     private void RotateAroundY(Touch touch)

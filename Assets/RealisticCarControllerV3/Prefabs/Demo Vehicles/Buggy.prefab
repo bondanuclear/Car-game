@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 357226189}
   - component: {fileID: 357226191}
   - component: {fileID: 357226190}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Needle_RPM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28,6 +28,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.2499, y: 0.84712, z: 0.32}
   m_LocalScale: {x: 0.60375, y: 0.60375, z: 0.60375}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6007175760678261018}
   m_RootOrder: 53
@@ -51,10 +52,12 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -80,6 +83,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &1167282862
 GameObject:
   m_ObjectHideFlags: 0
@@ -89,7 +93,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1167282863}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Exhausts
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106,6 +110,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -0.47000122, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1238642005}
   m_Father: {fileID: 1596370247908628040}
@@ -123,7 +128,7 @@ GameObject:
   - component: {fileID: 1238642008}
   - component: {fileID: 1238642007}
   - component: {fileID: 1238642006}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: RCCExhaust
   m_TagString: Player
   m_Icon: {fileID: 4162164826716764455, guid: 0000000000000000d000000000000000, type: 0}
@@ -140,6 +145,7 @@ Transform:
   m_LocalRotation: {x: 1.8189892e-12, y: 1, z: 5.4569678e-12, w: -0.000000119209275}
   m_LocalPosition: {x: -0.167, y: 0.245, z: -1.474}
   m_LocalScale: {x: 1.0000005, y: 1, z: 1.0000005}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1848013837}
   m_Father: {fileID: 1167282863}
@@ -152,19 +158,19 @@ ParticleSystem:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1238642004}
-  serializedVersion: 6
+  serializedVersion: 8
   lengthInSec: 5
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 3
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
+  emitterVelocityMode: 1
   looping: 1
   prewarm: 0
   playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
-  useRigidbodyForVelocity: 1
   startDelay:
     serializedVersion: 2
     minMaxState: 0
@@ -570,6 +576,7 @@ ParticleSystem:
         m_RotationOrder: 4
     randomizeRotationDirection: 0
     maxNumParticles: 100
+    customEmitterVelocity: {x: 0, y: 0, z: 0}
     size3D: 0
     rotation3D: 0
     gravityModifier:
@@ -2085,6 +2092,62 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
+  LifetimeByEmitterSpeedModule:
+    enabled: 0
+    m_Curve:
+      serializedVersion: 2
+      minMaxState: 1
+      scalar: 1
+      minScalar: 1
+      maxCurve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: -0.8
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 1
+          value: 0.2
+          inSlope: -0.8
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.33333334
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      minCurve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.33333334
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    m_Range: {x: 0, y: 1}
   ForceModule:
     enabled: 0
     x:
@@ -3515,19 +3578,20 @@ ParticleSystem:
     range: {x: 0, y: 10}
   CollisionModule:
     enabled: 0
-    serializedVersion: 3
+    serializedVersion: 4
     type: 1
     collisionMode: 0
     colliderForce: 0
     multiplyColliderForceByParticleSize: 0
     multiplyColliderForceByParticleSpeed: 0
     multiplyColliderForceByCollisionAngle: 1
-    plane0: {fileID: 0}
-    plane1: {fileID: 0}
-    plane2: {fileID: 0}
-    plane3: {fileID: 0}
-    plane4: {fileID: 0}
-    plane5: {fileID: 0}
+    m_Planes:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
     m_Dampen:
       serializedVersion: 2
       minMaxState: 0
@@ -3701,17 +3765,20 @@ ParticleSystem:
     interiorCollisions: 1
   TriggerModule:
     enabled: 0
-    collisionShape0: {fileID: 0}
-    collisionShape1: {fileID: 0}
-    collisionShape2: {fileID: 0}
-    collisionShape3: {fileID: 0}
-    collisionShape4: {fileID: 0}
-    collisionShape5: {fileID: 0}
+    serializedVersion: 2
     inside: 1
     outside: 0
     enter: 0
     exit: 0
+    colliderQueryMode: 0
     radiusScale: 1
+    primitives:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
   SubModule:
     serializedVersion: 2
     enabled: 0
@@ -4662,10 +4729,12 @@ ParticleSystemRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
@@ -4691,6 +4760,7 @@ ParticleSystemRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_RenderMode: 0
+  m_MeshDistribution: 0
   m_SortMode: 0
   m_MinParticleSize: 0
   m_MaxParticleSize: 0.5
@@ -4707,11 +4777,17 @@ ParticleSystemRenderer:
   m_EnableGPUInstancing: 0
   m_ApplyActiveColorSpace: 0
   m_AllowRoll: 1
+  m_FreeformStretching: 0
+  m_RotateWithStretchDirection: 1
   m_VertexStreams: 0001030405
   m_Mesh: {fileID: 0}
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
+  m_MeshWeighting: 1
+  m_MeshWeighting1: 1
+  m_MeshWeighting2: 1
+  m_MeshWeighting3: 1
   m_MaskInteraction: 0
 --- !u!114 &1238642006
 MonoBehaviour:
@@ -4750,7 +4826,7 @@ GameObject:
   - component: {fileID: 1848013840}
   - component: {fileID: 1848013839}
   - component: {fileID: 1848013838}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: RCCExhaustFlame
   m_TagString: Player
   m_Icon: {fileID: -7310811918437815874, guid: 0000000000000000d000000000000000, type: 0}
@@ -4767,6 +4843,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1238642005}
   m_RootOrder: 0
@@ -4778,19 +4855,19 @@ ParticleSystem:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1848013836}
-  serializedVersion: 6
+  serializedVersion: 8
   lengthInSec: 0.25
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 3
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
+  emitterVelocityMode: 1
   looping: 1
   prewarm: 0
   playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
-  useRigidbodyForVelocity: 1
   startDelay:
     serializedVersion: 2
     minMaxState: 0
@@ -5196,6 +5273,7 @@ ParticleSystem:
         m_RotationOrder: 4
     randomizeRotationDirection: 0
     maxNumParticles: 100
+    customEmitterVelocity: {x: 0, y: 0, z: 0}
     size3D: 0
     rotation3D: 0
     gravityModifier:
@@ -6720,6 +6798,62 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
+  LifetimeByEmitterSpeedModule:
+    enabled: 0
+    m_Curve:
+      serializedVersion: 2
+      minMaxState: 1
+      scalar: 1
+      minScalar: 1
+      maxCurve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: -0.8
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 1
+          value: 0.2
+          inSlope: -0.8
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.33333334
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      minCurve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.33333334
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    m_Range: {x: 0, y: 1}
   ForceModule:
     enabled: 0
     x:
@@ -8150,19 +8284,20 @@ ParticleSystem:
     range: {x: 0, y: 1}
   CollisionModule:
     enabled: 0
-    serializedVersion: 3
+    serializedVersion: 4
     type: 1
     collisionMode: 0
     colliderForce: 0
     multiplyColliderForceByParticleSize: 0
     multiplyColliderForceByParticleSpeed: 0
     multiplyColliderForceByCollisionAngle: 1
-    plane0: {fileID: 0}
-    plane1: {fileID: 0}
-    plane2: {fileID: 0}
-    plane3: {fileID: 0}
-    plane4: {fileID: 0}
-    plane5: {fileID: 0}
+    m_Planes:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
     m_Dampen:
       serializedVersion: 2
       minMaxState: 0
@@ -8336,17 +8471,20 @@ ParticleSystem:
     interiorCollisions: 1
   TriggerModule:
     enabled: 0
-    collisionShape0: {fileID: 0}
-    collisionShape1: {fileID: 0}
-    collisionShape2: {fileID: 0}
-    collisionShape3: {fileID: 0}
-    collisionShape4: {fileID: 0}
-    collisionShape5: {fileID: 0}
+    serializedVersion: 2
     inside: 1
     outside: 0
     enter: 0
     exit: 0
+    colliderQueryMode: 0
     radiusScale: 1
+    primitives:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
   SubModule:
     serializedVersion: 2
     enabled: 0
@@ -9297,10 +9435,12 @@ ParticleSystemRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
@@ -9326,6 +9466,7 @@ ParticleSystemRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_RenderMode: 0
+  m_MeshDistribution: 0
   m_SortMode: 0
   m_MinParticleSize: 0
   m_MaxParticleSize: 0.5
@@ -9342,11 +9483,17 @@ ParticleSystemRenderer:
   m_EnableGPUInstancing: 0
   m_ApplyActiveColorSpace: 0
   m_AllowRoll: 1
+  m_FreeformStretching: 0
+  m_RotateWithStretchDirection: 1
   m_VertexStreams: 0001030405
   m_Mesh: {fileID: 0}
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
+  m_MeshWeighting: 1
+  m_MeshWeighting1: 1
+  m_MeshWeighting2: 1
+  m_MeshWeighting3: 1
   m_MaskInteraction: 0
 --- !u!108 &1848013839
 Light:
@@ -9407,6 +9554,7 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!123 &1848013838
@@ -9436,7 +9584,7 @@ GameObject:
   - component: {fileID: 1950578638}
   - component: {fileID: 1950578637}
   - component: {fileID: 1950578636}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Needle_KMH
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9453,6 +9601,7 @@ Transform:
   m_LocalRotation: {x: 0.24366516, y: -0, z: -0.000000036337948, w: 0.9698595}
   m_LocalPosition: {x: -0.0114, y: 0.7287, z: 0.2427}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6007175760678261018}
   m_RootOrder: 52
@@ -9476,10 +9625,12 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -9505,6 +9656,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &135045534131503168
 GameObject:
   m_ObjectHideFlags: 0
@@ -9516,7 +9668,7 @@ GameObject:
   - component: {fileID: 5176030063198475800}
   - component: {fileID: 1591096518593468784}
   - component: {fileID: 7533066576246146835}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Front Right Headlight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9533,6 +9685,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.18545373, y: 0.17647856, z: 0.0024557712}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1143236172880874059}
   m_RootOrder: 1
@@ -9556,10 +9709,12 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -9585,6 +9740,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &149159192031483137
 GameObject:
   m_ObjectHideFlags: 0
@@ -9595,7 +9751,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9097545009984019146}
   - component: {fileID: 460145429}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Bone_FrontAxleRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9612,6 +9768,7 @@ Transform:
   m_LocalRotation: {x: 0.00000008146034, y: 0, z: -0, w: 1}
   m_LocalPosition: {x: 0.37293667, y: 0.030215979, z: 0.93207836}
   m_LocalScale: {x: 1.255412, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6007175760678261018}
   m_RootOrder: 2
@@ -9644,7 +9801,7 @@ GameObject:
   - component: {fileID: 7752215794398786162}
   - component: {fileID: 6903165122613290009}
   - component: {fileID: 9029845134445321686}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Wheel_RR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9661,6 +9818,7 @@ Transform:
   m_LocalRotation: {x: 0.00000008146034, y: 0.00000071525574, z: -5.826498e-14, w: 1}
   m_LocalPosition: {x: 0.79780024, y: -0.0045591057, z: -0.9487522}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6007175760678261018}
   m_RootOrder: 50
@@ -9684,10 +9842,12 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -9712,6 +9872,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &773110818457681805
 GameObject:
   m_ObjectHideFlags: 0
@@ -9721,7 +9882,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7429871377548516339}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Bone_RearRightSuspension1Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9738,6 +9899,7 @@ Transform:
   m_LocalRotation: {x: -0.7071068, y: -0.00000013053673, z: 0.0000001215342, w: 0.7071068}
   m_LocalPosition: {x: 0.35389313, y: 0.20875452, z: -0.96065575}
   m_LocalScale: {x: 1.1704171, y: 1.1704171, z: 1.1704171}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6007175760678261018}
   m_RootOrder: 18
@@ -9751,7 +9913,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1605536940411193835}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Bone_FrontLeftSuspensionTop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9768,6 +9930,7 @@ Transform:
   m_LocalRotation: {x: -0.00000015695822, y: 0.00000023841858, z: 3.7421756e-14, w: 1}
   m_LocalPosition: {x: -0.38477406, y: 0.3494843, z: 0.9204995}
   m_LocalScale: {x: 0.903505, y: 0.903505, z: 0.903505}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6007175760678261018}
   m_RootOrder: 5
@@ -9782,7 +9945,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7932623863166826721}
   - component: {fileID: 927946736453641094}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Suspension_RR1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9799,6 +9962,7 @@ Transform:
   m_LocalRotation: {x: 0.00000008146034, y: 0.00000023841858, z: -1.9421659e-14, w: 1}
   m_LocalPosition: {x: -0.010504443, y: 0.5333856, z: -0.089763634}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6007175760678261018}
   m_RootOrder: 42
@@ -9814,10 +9978,12 @@ SkinnedMeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -9868,7 +10034,7 @@ GameObject:
   - component: {fileID: 2211658233704197504}
   - component: {fileID: 3368418278705794756}
   - component: {fileID: 1596370248217999886}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Rear Bumper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9885,6 +10051,7 @@ Transform:
   m_LocalRotation: {x: 0.00000008146034, y: 0.00000023841858, z: -1.9421659e-14, w: 1}
   m_LocalPosition: {x: 0.0040249517, y: 0.66015893, z: -1.2325681}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7114698534018624087}
   - {fileID: 609887774978876848}
@@ -9910,10 +10077,12 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -9940,6 +10109,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!64 &1596370248217999886
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -9965,7 +10135,7 @@ GameObject:
   - component: {fileID: 1386969354402012430}
   - component: {fileID: 1386969354402012428}
   - component: {fileID: 1386969354402012429}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Wheel_RR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9982,6 +10152,7 @@ Transform:
   m_LocalRotation: {x: 0.00000008146034, y: 0.00000071525574, z: -5.826498e-14, w: 1}
   m_LocalPosition: {x: 0.79780024, y: 0.005441129, z: -0.95174295}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1596370247713482361}
   m_RootOrder: 3
@@ -10005,10 +10176,12 @@ MeshRenderer:
   m_CastShadows: 2
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -10033,6 +10206,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &1386969354501878924
 GameObject:
   m_ObjectHideFlags: 0
@@ -10042,7 +10216,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1386969354501878915}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: COM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10059,6 +10233,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: -0.087, z: 0.0159}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5036705745499883403}
   m_RootOrder: 0
@@ -10072,7 +10247,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1386969354673893855}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: COM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10089,6 +10264,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: -0.087, z: 0.0159}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3527111812957192313}
   m_RootOrder: 0
@@ -10102,7 +10278,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1386969354718206253}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: COM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10119,6 +10295,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -0.32500076, z: -0.11300661}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1596370247908628040}
   m_RootOrder: 2
@@ -10134,7 +10311,7 @@ GameObject:
   - component: {fileID: 1386969354723828718}
   - component: {fileID: 1386969354723828719}
   - component: {fileID: 1386969354723828712}
-  m_Layer: 12
+  m_Layer: 6
   m_Name: Wheel_RR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10151,6 +10328,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.7939314, y: 0.15399957, z: -0.95095825}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1596370247054585526}
   m_RootOrder: 3
@@ -10229,7 +10407,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1386969354881785330}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Lights
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10246,6 +10424,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -0.47000122, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1596370246867782449}
   - {fileID: 1596370247985768079}
@@ -10265,7 +10444,7 @@ GameObject:
   - component: {fileID: 1386969354945755357}
   - component: {fileID: 1386969354945755347}
   - component: {fileID: 1386969354945755356}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Wheel_RL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10279,10 +10458,10 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1386969354945755358}
-  m_LocalRotation: {x: 0.000000081460385, y: 0.0000009536743, z: 0.000000043711346,
-    w: 1}
+  m_LocalRotation: {x: 0.000000081460385, y: 0.0000009536743, z: 0.000000043711346, w: 1}
   m_LocalPosition: {x: -0.7897506, y: 0.005441129, z: -0.9517409}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1596370247713482361}
   m_RootOrder: 2
@@ -10306,10 +10485,12 @@ MeshRenderer:
   m_CastShadows: 2
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -10334,6 +10515,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &1386969355135473453
 GameObject:
   m_ObjectHideFlags: 0
@@ -10343,7 +10525,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1386969355135473452}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: COM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10360,6 +10542,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: -0.087, z: 0.0159}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 609887774978876848}
   m_RootOrder: 0
@@ -10375,7 +10558,7 @@ GameObject:
   - component: {fileID: 1386969355171075127}
   - component: {fileID: 1386969355171075125}
   - component: {fileID: 1386969355171075126}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Wheel_FL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10389,10 +10572,10 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1386969355171075120}
-  m_LocalRotation: {x: 0.00000008146039, y: 0.0000011920929, z: 0.000000043711356,
-    w: 1}
+  m_LocalRotation: {x: 0.00000008146039, y: 0.0000011920929, z: 0.000000043711356, w: 1}
   m_LocalPosition: {x: -0.7898247, y: 0.005673036, z: 0.925224}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1596370247713482361}
   m_RootOrder: 0
@@ -10416,10 +10599,12 @@ MeshRenderer:
   m_CastShadows: 2
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -10444,6 +10629,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &1386969355553469549
 GameObject:
   m_ObjectHideFlags: 0
@@ -10455,7 +10641,7 @@ GameObject:
   - component: {fileID: 1386969355553469548}
   - component: {fileID: 1386969355553469539}
   - component: {fileID: 1386969355553469538}
-  m_Layer: 12
+  m_Layer: 6
   m_Name: Wheel_FR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10472,6 +10658,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.794, y: 0.15399957, z: 0.9259949}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1596370247054585526}
   m_RootOrder: 1
@@ -10550,7 +10737,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1386969355807666085}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: COM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10567,6 +10754,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: -0.087, z: 0.0159}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7114698534018624087}
   m_RootOrder: 0
@@ -10582,7 +10770,7 @@ GameObject:
   - component: {fileID: 1386969356002064092}
   - component: {fileID: 1386969356002064082}
   - component: {fileID: 1386969356002064083}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Wheel_FR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10599,6 +10787,7 @@ Transform:
   m_LocalRotation: {x: 0.00000008146034, y: 0.0000011920929, z: -4.0264877e-14, w: 1}
   m_LocalPosition: {x: 0.79780024, y: 0.005441129, z: 0.9252208}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1596370247713482361}
   m_RootOrder: 1
@@ -10622,10 +10811,12 @@ MeshRenderer:
   m_CastShadows: 2
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -10650,6 +10841,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &1386969356323187945
 GameObject:
   m_ObjectHideFlags: 0
@@ -10661,7 +10853,7 @@ GameObject:
   - component: {fileID: 1386969356323187944}
   - component: {fileID: 1386969356323187951}
   - component: {fileID: 1386969356323187950}
-  m_Layer: 12
+  m_Layer: 6
   m_Name: Wheel_FL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10678,6 +10870,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.794, y: 0.154, z: 0.926}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1596370247054585526}
   m_RootOrder: 0
@@ -10758,7 +10951,7 @@ GameObject:
   - component: {fileID: 1386969356354564829}
   - component: {fileID: 1386969356354564828}
   - component: {fileID: 1386969356354564819}
-  m_Layer: 12
+  m_Layer: 6
   m_Name: Wheel_RL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10775,6 +10968,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.79393137, y: 0.153999, z: -0.95095825}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1596370247054585526}
   m_RootOrder: 2
@@ -10873,6 +11067,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.239, y: 0.657, z: 1.41}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1596370248501341384}
   m_RootOrder: 3
@@ -10936,6 +11131,7 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!114 &1596370246637339006
@@ -11012,6 +11208,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.249, y: 0.657, z: 1.41}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1596370248501341384}
   m_RootOrder: 0
@@ -11075,6 +11272,7 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!114 &1596370246727364384
@@ -11151,6 +11349,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 1, z: 0, w: -0.00000004371139}
   m_LocalPosition: {x: 0.477, y: 0.782, z: -1.451}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1386969354881785330}
   m_RootOrder: 0
@@ -11214,6 +11413,7 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!114 &1596370246867782451
@@ -11290,6 +11490,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.133, y: 0.657, z: 1.41}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1596370248501341384}
   m_RootOrder: 1
@@ -11353,6 +11554,7 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!114 &1596370247002828607
@@ -11407,7 +11609,7 @@ GameObject:
   - component: {fileID: 1596370247050427845}
   - component: {fileID: 1596370247050427844}
   - component: {fileID: 1596370247050427707}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: HoodCamera
   m_TagString: Player
   m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
@@ -11424,6 +11626,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.37300116, y: 0.53899956, z: -0.27301022}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1596370247908628040}
   m_RootOrder: 4
@@ -11464,6 +11667,7 @@ ConfigurableJoint:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1596370247050427705}
   m_ConnectedBody: {fileID: 1596370247908628047}
+  m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
@@ -11560,7 +11764,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1596370247054585526}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Wheel Colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11577,6 +11781,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -0.47000122, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1386969356323187944}
   - {fileID: 1386969355553469548}
@@ -11614,6 +11819,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.121, y: 0.657, z: 1.41}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1596370248501341384}
   m_RootOrder: 2
@@ -11677,6 +11883,7 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!114 &1596370247192568614
@@ -11729,7 +11936,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1596370247376888519}
   - component: {fileID: 1596370247376888512}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: WheelCamera
   m_TagString: Untagged
   m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
@@ -11746,6 +11953,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -0.06300163, z: -2.0277712}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1596370247908628040}
   m_RootOrder: 5
@@ -11771,7 +11979,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1596370247701516034}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: COM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11788,6 +11996,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: -0.029, z: 0.608}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2370639864231069349}
   m_RootOrder: 0
@@ -11801,7 +12010,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1596370247713482361}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Wheel Models
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11818,6 +12027,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -0.47000122, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1386969355171075127}
   - {fileID: 1386969356002064092}
@@ -11855,6 +12065,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 1, z: 0, w: -0.00000004371139}
   m_LocalPosition: {x: 0.1988, y: 1.1113, z: -1.2827}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1386969354881785330}
   m_RootOrder: 3
@@ -11918,6 +12129,7 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!114 &1596370247744258232
@@ -11994,6 +12206,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 1, z: 0, w: -0.00000004371139}
   m_LocalPosition: {x: -0.1897, y: 1.1113, z: -1.2827}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1386969354881785330}
   m_RootOrder: 2
@@ -12057,6 +12270,7 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!114 &1596370247777239896
@@ -12116,7 +12330,7 @@ GameObject:
   - component: {fileID: 1596370247908628047}
   - component: {fileID: 1596370247908628046}
   - component: {fileID: 419134078}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Buggy
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -12133,6 +12347,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6007175760678261018}
   - {fileID: 1596370247713482361}
@@ -12304,6 +12519,7 @@ MonoBehaviour:
   minEngineRPM: 1000
   maxEngineRPM: 8000
   engineRPM: 0
+  engineRPMRaw: 0
   engineInertia: 0.2
   useRevLimiter: 1
   useExhaustFlame: 1
@@ -12521,6 +12737,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 1, z: 0, w: -0.00000004371139}
   m_LocalPosition: {x: -0.477, y: 0.782, z: -1.451}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1386969354881785330}
   m_RootOrder: 1
@@ -12584,6 +12801,7 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!114 &1596370247985768073
@@ -12640,7 +12858,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1596370248501341384}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Lights
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12657,6 +12875,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -0.47000122, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1596370246727364390}
   - {fileID: 1596370247002828605}
@@ -12674,7 +12893,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7632846833625639840}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Bone_FrontRightSuspension1Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12691,6 +12910,7 @@ Transform:
   m_LocalRotation: {x: 0.00000008146034, y: 0, z: -0, w: 1}
   m_LocalPosition: {x: 0.3783096, y: 0.18064778, z: 0.7695253}
   m_LocalScale: {x: 0.752474, y: 0.752474, z: 0.752474}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6007175760678261018}
   m_RootOrder: 8
@@ -12706,7 +12926,7 @@ GameObject:
   - component: {fileID: 7354705752432405780}
   - component: {fileID: 6221609582494168965}
   - component: {fileID: 4834401226967582988}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Left Brakelight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12723,6 +12943,7 @@ Transform:
   m_LocalRotation: {x: 0.00000008146034, y: 0.00000023841858, z: -1.9421659e-14, w: 1}
   m_LocalPosition: {x: -0.47175986, y: 0.78202146, z: -1.4448808}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6007175760678261018}
   m_RootOrder: 25
@@ -12746,10 +12967,12 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -12774,6 +12997,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &2044825950363030771
 GameObject:
   m_ObjectHideFlags: 0
@@ -12783,7 +13007,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5983737582728197988}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Bone_RearRightSuspensionTop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12800,6 +13024,7 @@ Transform:
   m_LocalRotation: {x: -0.7071068, y: -0.000000014744855, z: 1.7577229e-15, w: 0.7071068}
   m_LocalPosition: {x: 0.45862034, y: 0.3257582, z: -0.99260944}
   m_LocalScale: {x: 0.714603, y: 0.714603, z: 0.714603}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6007175760678261018}
   m_RootOrder: 20
@@ -12815,7 +13040,7 @@ GameObject:
   - component: {fileID: 3352952992466205325}
   - component: {fileID: 5727950621462570141}
   - component: {fileID: 1590595005064349032}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Wheel_FR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12832,6 +13057,7 @@ Transform:
   m_LocalRotation: {x: 0.00000008146034, y: 0.0000011920929, z: -4.0264877e-14, w: 1}
   m_LocalPosition: {x: 0.79780024, y: -0.0045591057, z: 0.9282115}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6007175760678261018}
   m_RootOrder: 48
@@ -12855,10 +13081,12 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -12883,6 +13111,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &2404782096650944721
 GameObject:
   m_ObjectHideFlags: 0
@@ -12898,7 +13127,7 @@ GameObject:
   - component: {fileID: 1675554862}
   - component: {fileID: 1596370248217999887}
   - component: {fileID: 1675554864}
-  m_Layer: 11
+  m_Layer: 6
   m_Name: Hood
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12915,6 +13144,7 @@ Transform:
   m_LocalRotation: {x: 0.00000008146034, y: 0.00000023841858, z: -1.9421659e-14, w: 1}
   m_LocalPosition: {x: 0.0113918185, y: 0.80650187, z: 0.40687093}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1596370247701516034}
   m_Father: {fileID: 6007175760678261018}
@@ -12939,10 +13169,12 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -12967,6 +13199,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!54 &1675554859
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -12991,6 +13224,7 @@ ConfigurableJoint:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2404782096650944721}
   m_ConnectedBody: {fileID: 1596370247908628047}
+  m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
@@ -13125,7 +13359,7 @@ GameObject:
   - component: {fileID: 8145262415971250668}
   - component: {fileID: 3183053982294973388}
   - component: {fileID: 1596370247777845342}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Swing_FL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13142,6 +13376,7 @@ Transform:
   m_LocalRotation: {x: 0.00000008146034, y: 0.00000023841858, z: -1.9421659e-14, w: 1}
   m_LocalPosition: {x: -0.34045023, y: 0.007455722, z: 0.443211}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6007175760678261018}
   m_RootOrder: 43
@@ -13165,10 +13400,12 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -13193,6 +13430,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!114 &1596370247777845342
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13220,7 +13458,7 @@ GameObject:
   m_Component:
   - component: {fileID: 19931966447359314}
   - component: {fileID: 5847807248875375763}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Front Axle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13237,6 +13475,7 @@ Transform:
   m_LocalRotation: {x: 0.00000008146034, y: 0.00000023841858, z: -1.9421659e-14, w: 1}
   m_LocalPosition: {x: -0.010504044, y: 0.06780664, z: 0.9070313}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6007175760678261018}
   m_RootOrder: 22
@@ -13252,10 +13491,12 @@ SkinnedMeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -13306,7 +13547,7 @@ GameObject:
   - component: {fileID: 3548154752336970424}
   - component: {fileID: 6197616017538629907}
   - component: {fileID: 1596370247777845341}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Swing_FR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13323,6 +13564,7 @@ Transform:
   m_LocalRotation: {x: 0.00000008146034, y: 0.00000023841858, z: -1.9421659e-14, w: 1}
   m_LocalPosition: {x: 0.32013628, y: 0.007490794, z: 0.44273725}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6007175760678261018}
   m_RootOrder: 44
@@ -13346,10 +13588,12 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -13374,6 +13618,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!114 &1596370247777845341
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13405,7 +13650,7 @@ GameObject:
   - component: {fileID: 1596370247103985588}
   - component: {fileID: 1596370247103985579}
   - component: {fileID: 1596370247103985591}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Hook_RR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13422,6 +13667,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.34062108, y: -0.3368119, z: -0.3648906}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1386969355135473452}
   m_Father: {fileID: 3324715704152041856}
@@ -13446,10 +13692,12 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -13474,6 +13722,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!54 &1596370247103985588
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -13498,6 +13747,7 @@ ConfigurableJoint:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3048237992292428807}
   m_ConnectedBody: {fileID: 1596370247908628047}
+  m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
@@ -13608,7 +13858,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8739518627435421120}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Bone_RearLeftSuspensionTop1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13625,6 +13875,7 @@ Transform:
   m_LocalRotation: {x: -0.7071068, y: -0.00000006373238, z: 0.000000001934523, w: 0.7071068}
   m_LocalPosition: {x: -0.37710062, y: 0.21018443, z: -0.9600634}
   m_LocalScale: {x: 0.96274203, y: 0.96274203, z: 0.96274203}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6007175760678261018}
   m_RootOrder: 16
@@ -13641,7 +13892,7 @@ GameObject:
   - component: {fileID: 3922141315044639979}
   - component: {fileID: 2734636154338096511}
   - component: {fileID: 1596370247777845318}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Shaft_Front
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13658,6 +13909,7 @@ Transform:
   m_LocalRotation: {x: 0.00000008146034, y: 0.00000023841858, z: -1.9421659e-14, w: 1}
   m_LocalPosition: {x: 0.084327646, y: 0.057362475, z: 0.33075362}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6007175760678261018}
   m_RootOrder: 32
@@ -13681,10 +13933,12 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -13709,6 +13963,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!114 &1596370247777845318
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13737,7 +13992,7 @@ GameObject:
   - component: {fileID: 4655461891862805225}
   - component: {fileID: 6942875881928768706}
   - component: {fileID: 5804847796037193212}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Windshield
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13754,6 +14009,7 @@ Transform:
   m_LocalRotation: {x: 0.00000008146034, y: 0.00000023841858, z: -1.9421659e-14, w: 1}
   m_LocalPosition: {x: 0.004024802, y: 0.97213095, z: 0.2597593}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6007175760678261018}
   m_RootOrder: 51
@@ -13777,10 +14033,12 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -13805,6 +14063,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &3838948557780450181
 GameObject:
   m_ObjectHideFlags: 0
@@ -13816,7 +14075,7 @@ GameObject:
   - component: {fileID: 974063275201761389}
   - component: {fileID: 6874439936337426676}
   - component: {fileID: 5825992738462524658}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Front Left Headlight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13833,6 +14092,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.1854538, y: 0.17647856, z: 0.0024555943}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1143236172880874059}
   m_RootOrder: 0
@@ -13856,10 +14116,12 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -13885,6 +14147,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &3846312941567018748
 GameObject:
   m_ObjectHideFlags: 0
@@ -13895,7 +14158,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3718090912905808894}
   - component: {fileID: 5562731780634326031}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Suspension_RR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13912,6 +14175,7 @@ Transform:
   m_LocalRotation: {x: 0.00000008146034, y: 0.00000023841858, z: -1.9421659e-14, w: 1}
   m_LocalPosition: {x: -0.010504443, y: 0.5333856, z: -0.089763634}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6007175760678261018}
   m_RootOrder: 41
@@ -13927,10 +14191,12 @@ SkinnedMeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -13981,7 +14247,7 @@ GameObject:
   - component: {fileID: 4782148949933043399}
   - component: {fileID: 6890957777541887500}
   - component: {fileID: 1311513097867876513}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: VehicleShadowProjector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13998,6 +14264,7 @@ Transform:
   m_LocalRotation: {x: 0.70710665, y: -0, z: -0.000000059604645, w: 0.707107}
   m_LocalPosition: {x: 0, y: -0.6028862, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1596370247908628040}
   m_RootOrder: 9
@@ -14043,7 +14310,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2694937462106765580}
   - component: {fileID: 2923169427763876755}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Suspension_RL1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14060,6 +14327,7 @@ Transform:
   m_LocalRotation: {x: 0.00000008146034, y: 0.00000023841858, z: -1.9421659e-14, w: 1}
   m_LocalPosition: {x: -0.375478, y: 0.15152983, z: -0.95973366}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6007175760678261018}
   m_RootOrder: 40
@@ -14075,10 +14343,12 @@ SkinnedMeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -14131,7 +14401,7 @@ GameObject:
   - component: {fileID: 1596370248629443181}
   - component: {fileID: 1596370248629443176}
   - component: {fileID: 1596370248629443180}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Hook_FR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14148,6 +14418,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.3369376, y: -0.20276125, z: 0.1326117}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1386969354501878915}
   m_Father: {fileID: 1143236172880874059}
@@ -14172,10 +14443,12 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -14200,6 +14473,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!54 &1596370248629443181
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -14238,6 +14512,7 @@ ConfigurableJoint:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4079444279735622344}
   m_ConnectedBody: {fileID: 1596370247908628047}
+  m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
@@ -14335,7 +14610,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6345177772009384462}
   - component: {fileID: 1596370247777845330}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Bone_RearLeftSuspensionButtom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14352,6 +14627,7 @@ Transform:
   m_LocalRotation: {x: -0.7071068, y: -0.000000004754199, z: -0.000000004754199, w: 0.7071068}
   m_LocalPosition: {x: -0.49014738, y: 0.13384588, z: -0.988719}
   m_LocalScale: {x: 0.971794, y: 0.971794, z: 0.971794}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6007175760678261018}
   m_RootOrder: 13
@@ -14385,7 +14661,7 @@ GameObject:
   - component: {fileID: 8011074712291469253}
   - component: {fileID: 7526086550394401745}
   - component: {fileID: 1596370247777845340}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Swing_RL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14402,6 +14678,7 @@ Transform:
   m_LocalRotation: {x: 0.00000008146034, y: 0.00000023841858, z: -1.9421659e-14, w: 1}
   m_LocalPosition: {x: -0.3412242, y: 0.005768053, z: -0.43618572}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6007175760678261018}
   m_RootOrder: 45
@@ -14425,10 +14702,12 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -14453,6 +14732,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!114 &1596370247777845340
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14479,7 +14759,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1897151673144103316}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Bone_FrontLeftSuspensionTop1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14496,6 +14776,7 @@ Transform:
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: -0.37707385, y: 0.17866814, z: 0.7799429}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6007175760678261018}
   m_RootOrder: 6
@@ -14514,7 +14795,7 @@ GameObject:
   - component: {fileID: 1596370247704582969}
   - component: {fileID: 1596370247704582968}
   - component: {fileID: 1596370247704583108}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Hook_FL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14531,6 +14812,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.33693758, y: -0.2027613, z: 0.13261174}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1386969354673893855}
   m_Father: {fileID: 1143236172880874059}
@@ -14555,10 +14837,12 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -14583,6 +14867,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!54 &1596370247704582969
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -14607,6 +14892,7 @@ ConfigurableJoint:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5011706274418701644}
   m_ConnectedBody: {fileID: 1596370247908628047}
+  m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
@@ -14720,7 +15006,7 @@ GameObject:
   - component: {fileID: 6576897608901238108}
   - component: {fileID: 1733218477503210779}
   - component: {fileID: 2034547996}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Shaft_Rear
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14737,6 +15023,7 @@ Transform:
   m_LocalRotation: {x: 0.00000008146034, y: 0.00000023841858, z: -1.9421659e-14, w: 1}
   m_LocalPosition: {x: 0.07710181, y: 0.053804982, z: -0.3366545}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6007175760678261018}
   m_RootOrder: 33
@@ -14760,10 +15047,12 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -14788,6 +15077,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!114 &2034547996
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14816,7 +15106,7 @@ GameObject:
   - component: {fileID: 5416399732413678031}
   - component: {fileID: 3943262533107566734}
   - component: {fileID: 6126598303307285842}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Left Taillight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14833,6 +15123,7 @@ Transform:
   m_LocalRotation: {x: 0.00000008146034, y: 0.00000023841858, z: -1.9421659e-14, w: 1}
   m_LocalPosition: {x: -0.19012599, y: 1.0889792, z: -1.2547204}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6007175760678261018}
   m_RootOrder: 26
@@ -14856,10 +15147,12 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -14885,6 +15178,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &5201326265753890870
 GameObject:
   m_ObjectHideFlags: 0
@@ -14897,7 +15191,7 @@ GameObject:
   - component: {fileID: 1619892284355201651}
   - component: {fileID: 6767442734616388710}
   - component: {fileID: 1596370248217999880}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Front Bumper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14914,6 +15208,7 @@ Transform:
   m_LocalRotation: {x: 0.00000008146034, y: 0.00000023841858, z: -1.9421659e-14, w: 1}
   m_LocalPosition: {x: 0.0042293905, y: 0.4589193, z: 1.3756542}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 974063275201761389}
   - {fileID: 5176030063198475800}
@@ -14941,10 +15236,12 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -14971,6 +15268,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!64 &1596370248217999880
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -14995,7 +15293,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2780544137835285049}
   - component: {fileID: 1608243549341689137}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Suspension_RL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15012,6 +15310,7 @@ Transform:
   m_LocalRotation: {x: 0.00000008146034, y: 0.00000023841858, z: -1.9421659e-14, w: 1}
   m_LocalPosition: {x: -0.4888477, y: 0.2329761, z: -0.9783557}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6007175760678261018}
   m_RootOrder: 39
@@ -15027,10 +15326,12 @@ SkinnedMeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -15080,7 +15381,7 @@ GameObject:
   m_Component:
   - component: {fileID: 729644837831040233}
   - component: {fileID: 1131432626}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Bone_FrontAxleLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15097,6 +15398,7 @@ Transform:
   m_LocalRotation: {x: 0.00000008146034, y: 0, z: -0, w: 1}
   m_LocalPosition: {x: -0.39266595, y: 0.030215979, z: 0.93207836}
   m_LocalScale: {x: 1.255412, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6007175760678261018}
   m_RootOrder: 1
@@ -15127,7 +15429,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1507441908662196533}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Bone_RearLeftSuspensionTop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15141,10 +15443,10 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5552228475381654503}
-  m_LocalRotation: {x: -0.7071068, y: -0.0000000037194137, z: -0.0000000037194137,
-    w: 0.7071068}
+  m_LocalRotation: {x: -0.7071068, y: -0.0000000037194137, z: -0.0000000037194137, w: 0.7071068}
   m_LocalPosition: {x: -0.47559884, y: 0.33323509, z: -0.9695998}
   m_LocalScale: {x: 0.96274203, y: 0.96274203, z: 0.96274203}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6007175760678261018}
   m_RootOrder: 15
@@ -15159,7 +15461,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1040016865706916591}
   - component: {fileID: 501882051}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Bone_RearAxleRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15176,6 +15478,7 @@ Transform:
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0.44565004, y: 0, z: -0.9414472}
   m_LocalScale: {x: 3.113303, y: 3.840755, z: 3.840755}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6007175760678261018}
   m_RootOrder: 12
@@ -15206,7 +15509,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 382432723117666131}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Bone_FrontRightSuspensionTop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15223,6 +15526,7 @@ Transform:
   m_LocalRotation: {x: 0.00000008146034, y: 0, z: -0, w: 1}
   m_LocalPosition: {x: 0.3922303, y: 0.3410959, z: 0.9221604}
   m_LocalScale: {x: 1, y: 1.105995, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6007175760678261018}
   m_RootOrder: 10
@@ -15237,7 +15541,7 @@ GameObject:
   m_Component:
   - component: {fileID: 813112244268672284}
   - component: {fileID: 1596370247777845334}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Bone_FrontLeftSuspensionButtom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15254,6 +15558,7 @@ Transform:
   m_LocalRotation: {x: -0.00000015695822, y: 0.00000023841858, z: 3.7421756e-14, w: 1}
   m_LocalPosition: {x: -0.38477406, y: 0.1368546, z: 0.9204995}
   m_LocalScale: {x: 0.903505, y: 0.903505, z: 0.903505}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6007175760678261018}
   m_RootOrder: 3
@@ -15287,7 +15592,7 @@ GameObject:
   - component: {fileID: 704645640871818818}
   - component: {fileID: 3945095714653225214}
   - component: {fileID: 1596370248217999881}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15304,6 +15609,7 @@ Transform:
   m_LocalRotation: {x: 0.00000008146034, y: 0.00000023841858, z: -1.9421659e-14, w: 1}
   m_LocalPosition: {x: 0.004024827, y: 0.73927575, z: -0.086489215}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6007175760678261018}
   m_RootOrder: 0
@@ -15327,10 +15633,12 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -15355,6 +15663,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!64 &1596370248217999881
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -15380,7 +15689,7 @@ GameObject:
   - component: {fileID: 5450115479629651471}
   - component: {fileID: 8114576481914650306}
   - component: {fileID: 7232125710197303999}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Chassis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15397,6 +15706,7 @@ Transform:
   m_LocalRotation: {x: 0.00000008146034, y: 0.00000023841858, z: -1.9421659e-14, w: 1}
   m_LocalPosition: {x: -0.010504443, y: 0.5333856, z: -0.089763634}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6007175760678261018}
   m_RootOrder: 21
@@ -15420,10 +15730,12 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -15454,6 +15766,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &6021767367069762349
 GameObject:
   m_ObjectHideFlags: 0
@@ -15466,7 +15779,7 @@ GameObject:
   - component: {fileID: 4211375620992509891}
   - component: {fileID: 1350316569686881089}
   - component: {fileID: 1596370247777845339}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Swing_RR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15483,6 +15796,7 @@ Transform:
   m_LocalRotation: {x: 0.00000008146034, y: 0.00000023841858, z: -1.9421659e-14, w: 1}
   m_LocalPosition: {x: 0.32063365, y: 0.0076339813, z: -0.43577075}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6007175760678261018}
   m_RootOrder: 46
@@ -15506,10 +15820,12 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -15534,6 +15850,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!114 &1596370247777845339
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15561,7 +15878,7 @@ GameObject:
   m_Component:
   - component: {fileID: 534014645792189166}
   - component: {fileID: 1394179871845397566}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Suspension_FR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15578,6 +15895,7 @@ Transform:
   m_LocalRotation: {x: 0.00000008146034, y: 0.00000023841858, z: -1.9421659e-14, w: 1}
   m_LocalPosition: {x: 0.39396423, y: 0.29304224, z: 0.92217445}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6007175760678261018}
   m_RootOrder: 37
@@ -15593,10 +15911,12 @@ SkinnedMeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -15647,7 +15967,7 @@ GameObject:
   - component: {fileID: 2583960907386490160}
   - component: {fileID: 7803419708333320250}
   - component: {fileID: 5127640417703718329}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Right Brakelight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15664,6 +15984,7 @@ Transform:
   m_LocalRotation: {x: 0.00000008146034, y: 0.00000023841858, z: -1.9421659e-14, w: 1}
   m_LocalPosition: {x: 0.48021922, y: 0.78202146, z: -1.4448808}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6007175760678261018}
   m_RootOrder: 30
@@ -15687,10 +16008,12 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -15715,6 +16038,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &6194890180653862249
 GameObject:
   m_ObjectHideFlags: 0
@@ -15725,7 +16049,7 @@ GameObject:
   m_Component:
   - component: {fileID: 214825460927318498}
   - component: {fileID: 1596370247777845329}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Bone_RearLeftSuspensionButtom1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15742,6 +16066,7 @@ Transform:
   m_LocalRotation: {x: -0.7071068, y: -0.00000006373238, z: 0.000000001934523, w: 0.7071068}
   m_LocalPosition: {x: -0.37710062, y: 0.09388638, z: -0.9600634}
   m_LocalScale: {x: 0.96274203, y: 0.96274203, z: 0.96274203}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6007175760678261018}
   m_RootOrder: 14
@@ -15774,7 +16099,7 @@ GameObject:
   - component: {fileID: 7831998529310448058}
   - component: {fileID: 2355395320317015408}
   - component: {fileID: 7006343321915376054}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Right Taillight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15791,6 +16116,7 @@ Transform:
   m_LocalRotation: {x: 0.00000008146034, y: 0.00000023841858, z: -1.9421659e-14, w: 1}
   m_LocalPosition: {x: 0.19858521, y: 1.0889792, z: -1.2547204}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6007175760678261018}
   m_RootOrder: 31
@@ -15814,10 +16140,12 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -15843,6 +16171,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &6514207665905357298
 GameObject:
   m_ObjectHideFlags: 0
@@ -15854,7 +16183,7 @@ GameObject:
   - component: {fileID: 6095782579731389459}
   - component: {fileID: 9071325205547952937}
   - component: {fileID: 8585943348626188719}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Wheel_RL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15868,10 +16197,10 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6514207665905357298}
-  m_LocalRotation: {x: 0.000000081460385, y: 0.0000009536743, z: 0.000000043711346,
-    w: 1}
+  m_LocalRotation: {x: 0.000000081460385, y: 0.0000009536743, z: 0.000000043711346, w: 1}
   m_LocalPosition: {x: -0.7897506, y: -0.0045591057, z: -0.9487502}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6007175760678261018}
   m_RootOrder: 49
@@ -15895,10 +16224,12 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -15923,6 +16254,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &6809665806886763487
 GameObject:
   m_ObjectHideFlags: 0
@@ -15933,7 +16265,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1998463436743954793}
   - component: {fileID: 2061810057}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Bone_RearAxleLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15950,6 +16282,7 @@ Transform:
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: -0.39684236, y: 0, z: -0.9414472}
   m_LocalScale: {x: 3.9156501, y: 3.840755, z: 3.840755}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6007175760678261018}
   m_RootOrder: 11
@@ -15981,7 +16314,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2972494068424002379}
   - component: {fileID: 1596370247777845332}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Bone_FrontRightSuspension1Buttom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15998,6 +16331,7 @@ Transform:
   m_LocalRotation: {x: 0.00000008146034, y: 0, z: -0, w: 1}
   m_LocalPosition: {x: 0.41667503, y: 0.07987083, z: 0.8210863}
   m_LocalScale: {x: 0.752474, y: 0.752474, z: 0.752474}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6007175760678261018}
   m_RootOrder: 7
@@ -16029,7 +16363,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9024810468823538006}
   - component: {fileID: 1596370247777845327}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Bone_RearRightSuspensionButtom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16046,6 +16380,7 @@ Transform:
   m_LocalRotation: {x: -0.7071068, y: -0.000000014744855, z: 1.7577229e-15, w: 0.7071068}
   m_LocalPosition: {x: 0.48026377, y: 0.1385112, z: -0.99260944}
   m_LocalScale: {x: 0.714603, y: 0.714603, z: 0.714603}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6007175760678261018}
   m_RootOrder: 19
@@ -16077,7 +16412,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6136523925092527042}
   - component: {fileID: 6738598369430420641}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Suspension_FR1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16094,6 +16429,7 @@ Transform:
   m_LocalRotation: {x: 0.00000008146034, y: 0.00000023841858, z: -1.9421659e-14, w: 1}
   m_LocalPosition: {x: 0.40092194, y: 0.12940298, z: 0.80041414}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6007175760678261018}
   m_RootOrder: 38
@@ -16109,10 +16445,12 @@ SkinnedMeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -16161,7 +16499,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3502088869452369615}
   - component: {fileID: 2929781764220190031}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Suspension_FL1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16178,6 +16516,7 @@ Transform:
   m_LocalRotation: {x: 0.00000008146034, y: 0.00000023841858, z: -1.9421659e-14, w: 1}
   m_LocalPosition: {x: -0.3928715, y: 0.12940308, z: 0.80041444}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6007175760678261018}
   m_RootOrder: 36
@@ -16193,10 +16532,12 @@ SkinnedMeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -16245,7 +16586,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6007175760678261018}
   - component: {fileID: 2777936372395895937}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Buggy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16262,6 +16603,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -0.47000122, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6591681140412340153}
   - {fileID: 729644837831040233}
@@ -16345,7 +16687,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6406414100206602318}
   - component: {fileID: 1596370247777845333}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Bone_FrontLeftSuspensionButtom1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16362,6 +16704,7 @@ Transform:
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: -0.4109982, y: 0.07760442, z: 0.8252464}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6007175760678261018}
   m_RootOrder: 4
@@ -16393,7 +16736,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8489981482814746045}
   - component: {fileID: 1596370247777845331}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Bone_FrontRightSuspensionButtom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16410,6 +16753,7 @@ Transform:
   m_LocalRotation: {x: 0.00000008146034, y: 0, z: -0, w: 1}
   m_LocalPosition: {x: 0.3922303, y: 0.1319218, z: 0.9221604}
   m_LocalScale: {x: 1, y: 0.994384, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6007175760678261018}
   m_RootOrder: 9
@@ -16442,7 +16786,7 @@ GameObject:
   - component: {fileID: 173338761955533057}
   - component: {fileID: 5478105200863561308}
   - component: {fileID: 6327858165949296418}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Wheel_FL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16456,10 +16800,10 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7729618753389310540}
-  m_LocalRotation: {x: 0.00000008146039, y: 0.0000011920929, z: 0.000000043711356,
-    w: 1}
+  m_LocalRotation: {x: 0.00000008146039, y: 0.0000011920929, z: 0.000000043711356, w: 1}
   m_LocalPosition: {x: -0.7898247, y: -0.0043271887, z: 0.9282147}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6007175760678261018}
   m_RootOrder: 47
@@ -16483,10 +16827,12 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -16511,6 +16857,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &7982598865603910259
 GameObject:
   m_ObjectHideFlags: 0
@@ -16521,7 +16868,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4261215935026351137}
   - component: {fileID: 2754741903974827820}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Suspension_FL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16538,6 +16885,7 @@ Transform:
   m_LocalRotation: {x: 0.00000008146034, y: 0.00000023841858, z: -1.9421659e-14, w: 1}
   m_LocalPosition: {x: -0.38591367, y: 0.24203089, z: 0.9221749}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6007175760678261018}
   m_RootOrder: 35
@@ -16553,10 +16901,12 @@ SkinnedMeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -16606,7 +16956,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7953030344221978396}
   - component: {fileID: 1577501973731418795}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Rear Axle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16623,6 +16973,7 @@ Transform:
   m_LocalRotation: {x: 0.00000008146034, y: 0.00000023841858, z: -1.9421659e-14, w: 1}
   m_LocalPosition: {x: -0.010504831, y: 0.0015679639, z: -0.91806424}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6007175760678261018}
   m_RootOrder: 27
@@ -16638,10 +16989,12 @@ SkinnedMeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -16694,7 +17047,7 @@ GameObject:
   - component: {fileID: 1596370248589713856}
   - component: {fileID: 1596370248589713859}
   - component: {fileID: 1596370248589713863}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Hook_RL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16711,6 +17064,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.3402117, y: -0.3368119, z: -0.36489055}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1386969355807666085}
   m_Father: {fileID: 3324715704152041856}
@@ -16735,10 +17089,12 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -16763,6 +17119,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!54 &1596370248589713856
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -16801,6 +17158,7 @@ ConfigurableJoint:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8418929396796432689}
   m_ConnectedBody: {fileID: 1596370247908628047}
+  m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
@@ -16899,7 +17257,7 @@ GameObject:
   - component: {fileID: 7150152855490482976}
   - component: {fileID: 5767656272560012160}
   - component: {fileID: 6140706423608553763}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Rear Windshield
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16916,6 +17274,7 @@ Transform:
   m_LocalRotation: {x: 0.00000008146034, y: 0.00000023841858, z: -1.9421659e-14, w: 1}
   m_LocalPosition: {x: 0.004127271, y: 0.87063, z: -1.343687}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6007175760678261018}
   m_RootOrder: 29
@@ -16939,10 +17298,12 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -16967,6 +17328,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &8604150857456586187
 GameObject:
   m_ObjectHideFlags: 0
@@ -16977,7 +17339,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4837547529846004541}
   - component: {fileID: 1596370247777845328}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Bone_RearRightSuspension1Buttom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16994,6 +17356,7 @@ Transform:
   m_LocalRotation: {x: -0.7071068, y: -0.00000013053673, z: 0.0000001215342, w: 0.7071068}
   m_LocalPosition: {x: 0.35389313, y: 0.095837444, z: -0.96065575}
   m_LocalScale: {x: 1.1704171, y: 1.1704171, z: 1.1704171}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6007175760678261018}
   m_RootOrder: 17
@@ -17026,7 +17389,7 @@ GameObject:
   - component: {fileID: 2719551206537762707}
   - component: {fileID: 846055726324769760}
   - component: {fileID: 7333114063000969490}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: SteeringWheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17043,6 +17406,7 @@ Transform:
   m_LocalRotation: {x: 0.24331938, y: 0.0000002312532, z: -0.00000005801186, w: 0.9699462}
   m_LocalPosition: {x: -0.3644269, y: 0.75050706, z: 0.082900494}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6007175760678261018}
   m_RootOrder: 34
@@ -17066,10 +17430,12 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -17094,3 +17460,4 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
