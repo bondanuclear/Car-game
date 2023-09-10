@@ -2221,7 +2221,7 @@ MonoBehaviour:
   sensitivity: 2
   lowerThreshold: 5
   upperThreshold: 50
-  smoothTime: 1.5
+  smoothTime: 0.3
   maxSpeed: 100
 --- !u!1001 &1191283331
 PrefabInstance:

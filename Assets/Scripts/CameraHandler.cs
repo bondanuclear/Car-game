@@ -37,7 +37,7 @@ public class CameraHandler : MonoBehaviour
         {
             Touch touch = Input.GetTouch(0);
             
-            Debug.Log("Get touch" + Input.GetTouch(0).deltaPosition);
+            //Debug.Log("Get touch" + Input.GetTouch(0).deltaPosition);
             if (touch.phase == UnityEngine.TouchPhase.Began)
             {
                 initialTouch = touch.position;
@@ -53,13 +53,15 @@ public class CameraHandler : MonoBehaviour
                 rotationX -= touchDeltaPosition.y  * sensitivity * Time.deltaTime;
                 rotationX = Mathf.Clamp(rotationX, lowerThreshold, upperThreshold);
                 //Debug.Log(rotationX + " rotation X ");
-                Vector3 targetRotation = new Vector3(rotationX, rotationY, 0);
-                // currentRotation = Vector3.SmoothDamp(currentRotation, targetRotation,
-                //   ref currVelocity, smoothTime);
-                transform.localEulerAngles = Vector3.Lerp(transform.localEulerAngles,
-                targetRotation, smoothTime);
-                //transform.localEulerAngles = targetRotation; 
+               
+                
+                // transform.localEulerAngles = Vector3.Lerp(transform.localEulerAngles,
+                // targetRotation, smoothTime);
+                //transform.localEulerAngles = Vector3.Slerp(transform.localEulerAngles, targetRotation, smoothTime);
+                // transform.localEulerAngles = Vector3.SmoothDamp(transform.localEulerAngles, targetRotation,
+                //   ref currVelocity, smoothTime); 
                 //RotateAroundY(touch);
+                
             }
             else if(touch.phase == UnityEngine.TouchPhase.Ended)
             {
@@ -69,7 +71,10 @@ public class CameraHandler : MonoBehaviour
             
             
         }
-        
+        Vector3 targetRotation = new Vector3(rotationX, rotationY, 0);
+        currentRotation = Vector3.SmoothDamp(currentRotation, targetRotation,
+        ref currVelocity, smoothTime);
+        transform.localEulerAngles = currentRotation;
 
     }
 
