@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class LevelLoader : MonoBehaviour
 {
+    [SerializeField] Vector3 spawnPoint = new Vector3(0,0.5f,0);
     PersistentData persistentData;
     RCC_CarControllerV3 car;
     RCC_Camera rcc_Camera;
@@ -13,7 +14,7 @@ public class LevelLoader : MonoBehaviour
     }
     private void Start() {
         //Debug.Log("Check value :" + persistentData.CarIndex);
-        car = RCC.SpawnRCC(persistentData.GetCar, new Vector3(0, 0.5f, 0), Quaternion.identity, true, true, true);
+        car = RCC.SpawnRCC(persistentData.GetCar, spawnPoint, Quaternion.identity, true, true, true);
         rcc_Camera.playerCar = car;
         
     }
