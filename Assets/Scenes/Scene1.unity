@@ -2213,7 +2213,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   carLocation: {fileID: 1815455395}
-  rotatingSpeed: 100
   initialTouch: {x: 0, y: 0}
   newPosition: {x: 0, y: 0}
   dir: {x: 0, y: 0}
@@ -2222,7 +2221,6 @@ MonoBehaviour:
   lowerThreshold: 5
   upperThreshold: 50
   smoothTime: 0.3
-  maxSpeed: 100
 --- !u!1001 &1191283331
 PrefabInstance:
   m_ObjectHideFlags: 0
