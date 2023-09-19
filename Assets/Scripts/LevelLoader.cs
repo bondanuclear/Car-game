@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 public class LevelLoader : MonoBehaviour
 {
     [SerializeField] Vector3 spawnPoint = new Vector3(0,0.5f,0);
+    
     PersistentData persistentData;
     RCC_CarControllerV3 car;
     RCC_Camera rcc_Camera;
