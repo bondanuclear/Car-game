@@ -7,15 +7,8 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 public class CameraHandler : MonoBehaviour
 {
-    [SerializeField] GameObject carLocation;
-    [Header("Behaviour: only rotate around Y")]
-    //[SerializeField] float rotatingSpeed = 5f;
-    float rotatingDirection;
-    [SerializeField] Vector2 initialTouch;
-    [SerializeField] Vector2 newPosition;
-    [SerializeField] Vector2 dir;
-    // 
-    // different camera behaviour
+    [SerializeField] GameObject carLocation;  
+      
     [Header("Behaviour: arbitrary rotating")]
     [SerializeField] float distance = 20;
     float rotationY = -69, rotationX = 14;
@@ -23,14 +16,9 @@ public class CameraHandler : MonoBehaviour
     [SerializeField] float lowerThreshold = 1f;
     [SerializeField] float upperThreshold = 89;
     Vector3 currVelocity = Vector3.zero;
-    Vector3 currentRotation;
+    [SerializeField] Vector3 currentRotation = new Vector3(14, -69, 0);
     [SerializeField] float smoothTime = 3;
-    //[SerializeField] float maxSpeed = 100f;
-    
-    private void Start() {
-        currentRotation = new Vector3(14,-69,0);
-    }
-    // Update is called once per frame
+   
     void Update()
     {
         if(Input.touchCount > 0)
@@ -38,12 +26,8 @@ public class CameraHandler : MonoBehaviour
             Touch touch = Input.GetTouch(0);
             
             
-            if (touch.phase == UnityEngine.TouchPhase.Began)
-            {
-                initialTouch = touch.position;
-                
-            }
-            else if (touch.phase == UnityEngine.TouchPhase.Moved)
+            
+            if (touch.phase == UnityEngine.TouchPhase.Moved)
             {
                 
                 Vector2 touchDeltaPosition = touch.deltaPosition;
@@ -53,13 +37,10 @@ public class CameraHandler : MonoBehaviour
                 rotationX -= touchDeltaPosition.y  * sensitivity * Time.deltaTime;
                 rotationX = Mathf.Clamp(rotationX, lowerThreshold, upperThreshold);
                  
-                //RotateAroundY(touch);
+                
                 
             }
-            else if(touch.phase == UnityEngine.TouchPhase.Ended)
-            {
-                //rotatingDirection = 0;
-            } 
+           
             
             
         }
@@ -70,22 +51,12 @@ public class CameraHandler : MonoBehaviour
 
     }
 
-    private void RotateAroundY(Touch touch)
-    {
-        Debug.Log("Moved ");
-        newPosition = touch.position;
-        dir = (newPosition - initialTouch).normalized;
-        rotatingDirection = dir.x > 0.2 ? 1 : dir.x < -0.2 ? -1 : 0;
-        Debug.Log("Dir" + dir);
-        Debug.Log($"Initial touch {initialTouch}, new touch {newPosition}");
-    }
+    
 
     private void LateUpdate() {
         transform.position = carLocation.transform.position - transform.forward * distance;
         
         
-        // rotate aroundY
-        //transform.LookAt(carLocation.transform);
-        //transform.RotateAround(carLocation.transform.position, Vector3.up, rotatingDirection * rotatingSpeed * Time.deltaTime);
+        
     }
 }

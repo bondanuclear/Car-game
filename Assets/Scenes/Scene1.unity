@@ -5714,7 +5714,7 @@ GameObject:
   - component: {fileID: 978474674}
   - component: {fileID: 978474673}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: AdPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6756,13 +6756,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   carLocation: {fileID: 1815455395}
-  initialTouch: {x: 0, y: 0}
-  newPosition: {x: 0, y: 0}
-  dir: {x: 0, y: 0}
   distance: 10
   sensitivity: 2
   lowerThreshold: 5
   upperThreshold: 50
+  currentRotation: {x: 14, y: -69, z: 0}
   smoothTime: 0.3
 --- !u!1001 &1191283331
 PrefabInstance:

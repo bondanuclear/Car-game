@@ -9,8 +9,8 @@ public class Bank : MonoBehaviour
     int dollarAmount = 1000;
     int gemAmount = 50;
 
-    public int DollarAmount {get; set;}
-    public int GemAmount { get; set; }
+    public int DollarAmount {get; private set;}
+    public int GemAmount { get; private set; }
     private void Awake() {
         if(bankInstance == null)
         {
@@ -21,5 +21,12 @@ public class Bank : MonoBehaviour
         }
         DontDestroyOnLoad(gameObject);
     }
-
+    public void AddDollars(int amount)
+    {
+        dollarAmount += amount;
+    }
+    public void AddGems(int amount)
+    {
+        gemAmount += amount;
+    }
 }
