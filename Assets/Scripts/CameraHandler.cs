@@ -8,7 +8,7 @@ using UnityEngine.InputSystem;
 public class CameraHandler : MonoBehaviour
 {
     [SerializeField] GameObject carLocation;  
-      
+
     [Header("Behaviour: arbitrary rotating")]
     [SerializeField] float distance = 20;
     float rotationY = -69, rotationX = 14;
@@ -18,9 +18,10 @@ public class CameraHandler : MonoBehaviour
     Vector3 currVelocity = Vector3.zero;
     [SerializeField] Vector3 currentRotation = new Vector3(14, -69, 0);
     [SerializeField] float smoothTime = 3;
-   
+    public bool canRotate = false;
     void Update()
     {
+        if(!canRotate) return;
         if(Input.touchCount > 0)
         {
             Touch touch = Input.GetTouch(0);
