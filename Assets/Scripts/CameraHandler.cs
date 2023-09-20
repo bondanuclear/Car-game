@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -10,6 +11,7 @@ public class CameraHandler : MonoBehaviour
     [SerializeField] GameObject carLocation;  
 
     [Header("Behaviour: arbitrary rotating")]
+    [SerializeField] Vector3 initialCameraPos;
     [SerializeField] float distance = 20;
     float rotationY = -69, rotationX = 14;
     [SerializeField] float sensitivity = 0.2f;
@@ -18,38 +20,53 @@ public class CameraHandler : MonoBehaviour
     Vector3 currVelocity = Vector3.zero;
     [SerializeField] Vector3 currentRotation = new Vector3(14, -69, 0);
     [SerializeField] float smoothTime = 3;
-    public bool canRotate = false;
+    Vector3 targetRotation;
+    private bool canRotate = false;
+
+    private void OnEnable() {
+        UIManager.OnPanelChanged += EnableCameraRotation;
+    }
+    private void OnDisable() {
+        UIManager.OnPanelChanged -= EnableCameraRotation;
+    }
     void Update()
     {
-        if(!canRotate) return;
-        if(Input.touchCount > 0)
+        if(!canRotate) 
         {
-            Touch touch = Input.GetTouch(0);
-            
-            
-            
-            if (touch.phase == UnityEngine.TouchPhase.Moved)
+            rotationX = initialCameraPos.x;
+            rotationY = initialCameraPos.y;
+        }
+        else
+        {
+            if(Input.touchCount > 0)
             {
+                Touch touch = Input.GetTouch(0);
                 
-                Vector2 touchDeltaPosition = touch.deltaPosition;
-                //Vector2 deltaScaled = new Vector2(touchDeltaPosition.x / Screen.width, touchDeltaPosition.y / Screen.height);
-                   
-                rotationY += touchDeltaPosition.x  * sensitivity * Time.deltaTime;
-                rotationX -= touchDeltaPosition.y  * sensitivity * Time.deltaTime;
-                rotationX = Mathf.Clamp(rotationX, lowerThreshold, upperThreshold);
-                 
+                
+                
+                if (touch.phase == UnityEngine.TouchPhase.Moved)
+                {
+                    
+                    Vector2 touchDeltaPosition = touch.deltaPosition;
+                    //Vector2 deltaScaled = new Vector2(touchDeltaPosition.x / Screen.width, touchDeltaPosition.y / Screen.height);
+                    
+                    rotationY += touchDeltaPosition.x  * sensitivity * Time.deltaTime;
+                    rotationX -= touchDeltaPosition.y  * sensitivity * Time.deltaTime;
+                    rotationX = Mathf.Clamp(rotationX, lowerThreshold, upperThreshold);
+                    
+                    
+                    
+                }
+            
                 
                 
             }
-           
-            
-            
         }
-        Vector3 targetRotation = new Vector3(rotationX, rotationY, 0);
-        currentRotation = Vector3.SmoothDamp(currentRotation, targetRotation,
-        ref currVelocity, smoothTime);
-        transform.localEulerAngles = currentRotation;
-
+            targetRotation = new Vector3(rotationX, rotationY, 0);
+            currentRotation = Vector3.SmoothDamp(currentRotation, targetRotation,
+            ref currVelocity, smoothTime);
+            transform.localEulerAngles = currentRotation;
+        
     }
 
     
@@ -59,5 +76,35 @@ public class CameraHandler : MonoBehaviour
         
         
         
+    }
+    void EnableCameraRotation(bool toActivate)
+    {
+        canRotate = toActivate;
+        // if (!toActivate)
+        // {
+        //     StartCoroutine(ReturnCameraInitialPos(new Vector3(14, -69, 0)));
+        // }
+       
+       
+        
+
+    }
+    // does not work somehow -_-
+    IEnumerator ReturnCameraInitialPos(Vector3 rotationVector)
+    {
+        float duration = 0.1f;
+        float time = 0;
+        
+        while (time <= duration)
+        {
+            time += Time.deltaTime;
+            float percent = Mathf.Clamp01(time/duration);
+            transform.localEulerAngles = Vector3.Lerp(transform.localEulerAngles, rotationVector,
+            percent);
+            
+            yield return null;
+
+        }
+
     }
 }

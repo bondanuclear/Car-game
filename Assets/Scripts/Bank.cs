@@ -9,8 +9,8 @@ public class Bank : MonoBehaviour
     int dollarAmount = 1000;
     int gemAmount = 50;
 
-    public int DollarAmount {get; private set;}
-    public int GemAmount { get; private set; }
+    public int DollarAmount {get {return dollarAmount;}}
+    public int GemAmount { get { return gemAmount; } }
     private void Awake() {
         if(bankInstance == null)
         {
