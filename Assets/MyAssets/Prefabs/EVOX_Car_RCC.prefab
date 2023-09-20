@@ -19095,7 +19095,7 @@ MonoBehaviour:
   useFuelConsumption: 1
   fuelTankCapacity: 50
   fuelTank: 50
-  fuelConsumptionRate: 3
+  fuelConsumptionRate: 2
   useEngineHeat: 0
   engineHeat: 15
   engineCoolingWaterThreshold: 90
@@ -19176,7 +19176,7 @@ MonoBehaviour:
   indicatorTimer: 0
   damage:
     initialized: 0
-    deformationMode: 0
+    deformationMode: 1
     damageFilter:
       serializedVersion: 2
       m_Bits: 4294967295

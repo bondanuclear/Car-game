@@ -369,9 +369,9 @@ MonoBehaviour:
   oldSteeringInput: 0
   steeringDifference: 0
   useFuelConsumption: 1
-  fuelTankCapacity: 62
-  fuelTank: 62
-  fuelConsumptionRate: 0.1
+  fuelTankCapacity: 55
+  fuelTank: 55
+  fuelConsumptionRate: 2
   useEngineHeat: 0
   engineHeat: 15
   engineCoolingWaterThreshold: 90

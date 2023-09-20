@@ -18,6 +18,7 @@ public class CarConditionTracker : MonoBehaviour
     void Start()
     {
         playerCar = levelLoader.Car;
+        Debug.Log(playerCar.damage);
     }
 
     

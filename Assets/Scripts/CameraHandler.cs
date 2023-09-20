@@ -22,6 +22,7 @@ public class CameraHandler : MonoBehaviour
     [SerializeField] float smoothTime = 3;
     Vector3 targetRotation;
     private bool canRotate = false;
+    bool isCalculated = false;
 
     private void OnEnable() {
         UIManager.OnPanelChanged += EnableCameraRotation;
@@ -33,15 +34,28 @@ public class CameraHandler : MonoBehaviour
     {
         if(!canRotate) 
         {
+            if(!isCalculated)
+            {
+                float val = GetRemainder(currentRotation.y, 360);
+                currentRotation.y = val > 0 ? -val : val;
+                isCalculated = true;
+            }
+                
+            Debug.Log(currentRotation.y);
+            // Debug.Log("TEST " + (currentRotation.y - (360* (int)(currentRotation.y/360))));
+            // Debug.Log(currentRotation);
+            // Debug.Log("target rotation " + targetRotation);
+            // Debug.Log(rotationY % 360);
             rotationX = initialCameraPos.x;
             rotationY = initialCameraPos.y;
+            
         }
         else
         {
             if(Input.touchCount > 0)
             {
                 Touch touch = Input.GetTouch(0);
-                
+                isCalculated = false;
                 
                 
                 if (touch.phase == UnityEngine.TouchPhase.Moved)
@@ -53,7 +67,8 @@ public class CameraHandler : MonoBehaviour
                     rotationY += touchDeltaPosition.x  * sensitivity * Time.deltaTime;
                     rotationX -= touchDeltaPosition.y  * sensitivity * Time.deltaTime;
                     rotationX = Mathf.Clamp(rotationX, lowerThreshold, upperThreshold);
-                    
+                    // if(rotationY >= 360) rotationY = 0;
+                    // else if(rotationY <= -360) rotationY = 0;
                     
                     
                 }
@@ -65,6 +80,7 @@ public class CameraHandler : MonoBehaviour
             targetRotation = new Vector3(rotationX, rotationY, 0);
             currentRotation = Vector3.SmoothDamp(currentRotation, targetRotation,
             ref currVelocity, smoothTime);
+            
             transform.localEulerAngles = currentRotation;
         
     }
@@ -89,7 +105,7 @@ public class CameraHandler : MonoBehaviour
         
 
     }
-    // does not work somehow -_-
+    // does not work because of current rotation value;
     IEnumerator ReturnCameraInitialPos(Vector3 rotationVector)
     {
         float duration = 0.1f;
@@ -106,5 +122,9 @@ public class CameraHandler : MonoBehaviour
 
         }
 
+    }
+    float GetRemainder(float a, float b)
+    {
+        return a - (b * (int)(a / b));
     }
 }
