@@ -19092,10 +19092,10 @@ MonoBehaviour:
   steeringSensitivityFactor: 0.5
   oldSteeringInput: 0
   steeringDifference: 0
-  useFuelConsumption: 0
-  fuelTankCapacity: 62
-  fuelTank: 62
-  fuelConsumptionRate: 0.1
+  useFuelConsumption: 1
+  fuelTankCapacity: 50
+  fuelTank: 50
+  fuelConsumptionRate: 3
   useEngineHeat: 0
   engineHeat: 15
   engineCoolingWaterThreshold: 90

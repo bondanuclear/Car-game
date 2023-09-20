@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
@@ -19,6 +20,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject adPanel;
     [SerializeField] GameObject shopPanel;
     [SerializeField] GameObject garagePanel;
+    [SerializeField] GameObject levelsPanel;
 
     [Header("Buttons")]
     [SerializeField] GameObject backButton;
@@ -43,7 +45,9 @@ public class UIManager : MonoBehaviour
         if(garagePanel.activeSelf) ProcessGaragePanel(false);
         else 
         {
+            moneyPanel.SetActive(true);
             shopPanel.SetActive(false);
+            levelsPanel.SetActive(false);
             ProcessMainMenu(true);
         }
         
@@ -57,8 +61,26 @@ public class UIManager : MonoBehaviour
     
     private void ProcessMainMenu(bool toActivate)
     {
+        
         mainMenuPanel.SetActive(toActivate);
         adPanel.SetActive(toActivate);
         backButton.SetActive(!toActivate);
+    }
+    public void ActivateLevelsPanel()
+    {
+        moneyPanel.SetActive(false);
+        levelsPanel.SetActive(true);
+        ProcessMainMenu(false);
+    }
+    public void LoadTrack(int indexOfTrack)
+    {
+        StartCoroutine(LoadNextLevel(indexOfTrack));
+    }
+    private IEnumerator LoadNextLevel(int levelIndex)
+    {
+        // add level transition if needed
+        yield return null;
+        SceneManager.LoadSceneAsync(levelIndex);
+
     }
 }

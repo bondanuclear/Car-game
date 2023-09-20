@@ -24,8 +24,9 @@ public class CarSwitch : MonoBehaviour
     
     public void PickCar(int levelIndex)
     {
-        Debug.Log("You picked " + cars[currentIndex].gameObject.name);
-        StartCoroutine(LoadNextLevel(levelIndex));
+        //Debug.Log("You picked " + cars[currentIndex].gameObject.name);
+        persistentData.CarIndex = currentIndex;
+        //StartCoroutine(LoadNextLevel(levelIndex));
     }
     private IEnumerator LoadNextLevel(int levelIndex)
     {
