@@ -21,6 +21,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject shopPanel;
     [SerializeField] GameObject garagePanel;
     [SerializeField] GameObject levelsPanel;
+    [SerializeField] GameObject dailyRewardPanel;
+
 
     [Header("Buttons")]
     [SerializeField] GameObject backButton;
@@ -48,6 +50,7 @@ public class UIManager : MonoBehaviour
             moneyPanel.SetActive(true);
             shopPanel.SetActive(false);
             levelsPanel.SetActive(false);
+            dailyRewardPanel.SetActive(false);
             ProcessMainMenu(true);
         }
         
@@ -76,6 +79,11 @@ public class UIManager : MonoBehaviour
     {
         StartCoroutine(LoadNextLevel(indexOfTrack));
     }
+    public void ActivateDailyReward()
+    {
+        ProcessMainMenu(false);
+        dailyRewardPanel.SetActive(true);
+    }
     private IEnumerator LoadNextLevel(int levelIndex)
     {
         // add level transition if needed
@@ -83,4 +91,5 @@ public class UIManager : MonoBehaviour
         SceneManager.LoadSceneAsync(levelIndex);
 
     }
+
 }
