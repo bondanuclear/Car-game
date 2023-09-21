@@ -4,10 +4,15 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
     Bank bank;
+    AdManager adManager;
+    [Header("Ad buttons")]
+    [SerializeField] Button dailyButton;
+    [SerializeField] Button daily2XButton;
 
     [Header("Amount of money")]
 
@@ -30,13 +35,14 @@ public class UIManager : MonoBehaviour
     private void Awake() 
     {
         bank = FindObjectOfType<Bank>();
-    }
-    private void Start() 
-    {
-        dollarsText.text = bank.DollarAmount.ToString();
-        gemsText.text = bank.GemAmount.ToString(); 
+        adManager = FindObjectOfType<AdManager>();
     }
     
+    private void Update()
+    {
+        dollarsText.text = bank.DollarAmount.ToString();
+        gemsText.text = bank.GemAmount.ToString();
+    }
     public void ActivateShopPanel()
     {
         ProcessMainMenu(false);
@@ -91,5 +97,32 @@ public class UIManager : MonoBehaviour
         SceneManager.LoadSceneAsync(levelIndex);
 
     }
-
+    /////////// ad manager methods
+    ///
+    public void CollectReward()
+    {
+        AdManager.instance.CollectReward();
+        dailyButton.gameObject.SetActive(false);
+    }
+    public void DoubleRewardDaily()
+    {
+        AdManager.instance.DoubleRewardDaily();
+        daily2XButton.gameObject.SetActive(false);
+    }
+    public void GetDollars(int dollarsAmount)
+    {
+        AdManager.instance.GetDollars(dollarsAmount);
+    }
+    public void GetGems(int gemAmount)
+    {
+        AdManager.instance.GetGems(gemAmount);
+    }
+    public void AdDollarsReward()
+    {
+        AdManager.instance.AdDollarsReward();
+    }
+    public void AdGemsReward()
+    {
+        AdManager.instance.AdGemsReward();
+    }
 }
