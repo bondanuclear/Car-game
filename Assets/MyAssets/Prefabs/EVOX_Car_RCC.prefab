@@ -19095,7 +19095,7 @@ MonoBehaviour:
   useFuelConsumption: 1
   fuelTankCapacity: 50
   fuelTank: 50
-  fuelConsumptionRate: 5
+  fuelConsumptionRate: 3
   useEngineHeat: 0
   engineHeat: 15
   engineCoolingWaterThreshold: 90

@@ -23,6 +23,10 @@ public class FinishLineManager : MonoBehaviour
     {
         FinishChecker.OnFinishPassed += AddPoints;
     }
+    private void OnDisable()
+    {
+        FinishChecker.OnFinishPassed -= AddPoints;
+    }
     private void Start() {
         inspectedCounter.text = "Gates Inspected: " + counter;
         GameObject randomGate = GetRandomGate();
