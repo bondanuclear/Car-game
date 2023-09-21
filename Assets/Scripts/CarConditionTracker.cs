@@ -10,15 +10,18 @@ public class CarConditionTracker : MonoBehaviour
     LevelLoader levelLoader;
     RCC_CarControllerV3 playerCar;
     bool isNotified = false;
+    Rigidbody _rigidbody;
     private void Awake() 
     {
-        levelLoader = GetComponent<LevelLoader>();    
+        levelLoader = GetComponent<LevelLoader>();
+        
     }
     
     void Start()
     {
         playerCar = levelLoader.Car;
         Debug.Log(playerCar.damage);
+        _rigidbody = playerCar.GetComponent<Rigidbody>();
     }
 
     
@@ -31,7 +34,17 @@ public class CarConditionTracker : MonoBehaviour
         } else if(playerCar.fuelTank < 0.1f) 
         {
             lowGasPanel.SetActive(true);
-            Debug.Log("setting active");
+            
         }
+        
+    }
+
+    public void FillTheTank()
+    {
+        playerCar.fuelTank = playerCar.fuelTankCapacity;
+        isNotified = false;
+        lowGasPanel.SetActive(false);
+        gasWarning.SetActive(false);
+        playerCar.StartEngine();
     }
 }
